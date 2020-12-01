@@ -8,3 +8,15 @@ headers={
     "X-Auth-Token": TOKEN
 }
 #body
+import requests
+
+#resp=requests.request("GET")
+#resp=requests.get("GET")
+
+resp=requests.request("GET",url, headers=headers,verify=False)
+#la repsuesta de un request va a ser el status code
+resultado=resp.text
+print(str(type(resultado)))
+import json
+dict=json.loads(resultado)
+print(dict)
